@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "eoc-dash-auth"
+version = "0.1.0"
+description = "A Python package to integrate EOC Plotly Dash applications with EOC Hub authentication."
+authors = ["Toby Penner <tpenner@energyoutreach.org>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+dash-auth = "^2.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.6.0"
+ruff = "^0.1.13"
+ruff-lsp = "^0.0.49"
+mypy = "^1.8.0"
+types-requests = "^2.31.0.20240106"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "C", # flake8-comprehensions
+    "B", # flake8-bugbear
+    "UP", # pyupgrade
+]
+
+ignore = ["E501"]
