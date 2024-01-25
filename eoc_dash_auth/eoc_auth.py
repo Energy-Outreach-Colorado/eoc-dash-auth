@@ -2,7 +2,6 @@ import requests
 import werkzeug
 from dash_auth.auth import Auth  # type: ignore[import-untyped]
 from flask import Response, redirect, request
-from requests import JSONDecodeError
 
 from eoc_dash_auth import BASE_API_URL, BASE_FRONTEND_URL
 
@@ -16,12 +15,7 @@ class EOCAuth(Auth):
         response = requests.get(
             f"{BASE_API_URL}/users/me", cookies={"fastapiusersauth": auth_cookie}
         )
-        try:
-            response.json()
-        except JSONDecodeError:
-            return False
-
-        return True
+        return response.status_code == 200
 
     def login_request(self) -> werkzeug.Response:
         return redirect(BASE_FRONTEND_URL, code=307)
