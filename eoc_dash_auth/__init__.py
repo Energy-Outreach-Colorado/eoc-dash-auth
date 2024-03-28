@@ -4,8 +4,8 @@ from dash import Dash
 from dash_auth.auth import Auth  # type: ignore[import-untyped]
 from flask import Response, redirect, request
 
-BASE_FRONTEND_URL = "http://localhost:8000"
-BASE_API_URL = "http://localhost:8000"
+BASE_FRONTEND_URL = "https://speechium.com"
+BASE_API_URL = "https://speechium.com/api"
 
 
 class EOCAuth(Auth):
