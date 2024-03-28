@@ -19,12 +19,9 @@ class EOCAuth(Auth):
         self.path = path
 
     def is_authorized(self) -> bool:
-        auth_cookie = request.cookies.get("fastapiusersauth", None)
-        if auth_cookie is None:
-            return False
-
         response = requests.get(
-            f"{BASE_API_URL}/dashboards/", cookies={"fastapiusersauth": auth_cookie}
+            f"{BASE_API_URL}/dashboards/",
+            cookies={"fastapiusersauth": request.cookies.get("fastapiusersauth", None)},
         )
         if not response.ok:
             return False
