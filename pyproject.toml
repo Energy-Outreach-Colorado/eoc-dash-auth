@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "eoc-dash-auth"
-version = "0.1.0"
+version = "1.0.0"
 description = "A Python package to integrate EOC Plotly Dash applications with EOC Hub authentication."
 authors = ["Toby Penner <tpenner@energyoutreach.org>"]
 readme = "README.md"
