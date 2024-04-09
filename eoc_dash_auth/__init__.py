@@ -4,8 +4,8 @@ from dash import Dash
 from dash_auth.auth import Auth  # type: ignore[import-untyped]
 from flask import Response, redirect, request
 
-BASE_FRONTEND_URL = "https://speechium.com"
-BASE_API_URL = "https://speechium.com/api"
+BASE_FRONTEND_URL = "https://hub.energyoutreach.org"
+BASE_API_URL = "https://hub.energyoutreach.org/api"
 
 
 class EOCAuth(Auth):
